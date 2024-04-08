@@ -1,8 +1,8 @@
 ############################################################################################
-readID=$1 #SRR19088064_subreads
+readID=$1
 threadN=$2
 
-target_fa=/test/hifiasm.asm.bp.p_ctg.fa
+ref=/test/hifiasm.asm.bp.p_ctg.fa
 readDir=/test
 ############################################################################################
 
@@ -10,7 +10,7 @@ minimap2 \
     -t ${threadN} \
     -x asm20 \
     -I 20G \
-    ${target_fa} \
+    ${ref} \
     ${readDir}/${readID}.fastq.gz \
     2> run01.log \
-    | gzip -c - > ${readID}.paf.gz
+    | gzip -c - > result/${readID}.paf.gz
