@@ -6,6 +6,7 @@ if [ $CurrentDir = $WorkingDir ]
 then
 	echo "Same"
 	source activate purge_dups_v1.2.6-240408
+else
 	echo "Diff"
 fi
 ##################################################################################
